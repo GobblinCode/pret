@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Site - Daily Bonus Bot{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Edit Site: {{ site.name }}</h2>
+</div>
+
+<form method="POST" action="{{ url_for('main.edit_site', site_id=site.id) }}" class="site-form">
+    <div class="form-section">
+        <h3>Basic Information</h3>
+        
+        <div class="form-group">
+            <label for="name">Site Name *</label>
+            <input type="text" id="name" name="name" value="{{ site.name }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="url">Site URL *</label>
+            <input type="url" id="url" name="url" value="{{ site.url }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="login_url">Login URL (if different)</label>
+            <input type="url" id="login_url" name="login_url" value="{{ site.login_url or '' }}">
+        </div>
+        
+        <div class="form-group checkbox-group">
+            <label>
+                <input type="checkbox" id="is_active" name="is_active" 
+                       {% if site.is_active %}checked{% endif %}>
+                Active (Include in daily claims)
+            </label>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h3>Login Credentials</h3>
+        
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="{{ site.username or '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Leave blank to keep current password">
+            <small>Password will be encrypted before storage</small>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h3>CSS Selectors</h3>
+        
+        <div class="form-group">
+            <label for="username_selector">Username Field Selector</label>
+            <input type="text" id="username_selector" name="username_selector" 
+                   value="{{ site.username_selector or '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="password_selector">Password Field Selector</label>
+            <input type="text" id="password_selector" name="password_selector" 
+                   value="{{ site.password_selector or '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="login_button_selector">Login Button Selector</label>
+            <input type="text" id="login_button_selector" name="login_button_selector" 
+                   value="{{ site.login_button_selector or '' }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="bonus_claim_selector">Bonus Claim Button Selector</label>
+            <input type="text" id="bonus_claim_selector" name="bonus_claim_selector" 
+                   value="{{ site.bonus_claim_selector or '' }}">
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h3>Additional Navigation Steps (Optional)</h3>
+        
+        <div class="form-group">
+            <label for="additional_steps">Additional Steps</label>
+            <textarea id="additional_steps" name="additional_steps" rows="6">{{ site.additional_steps or '' }}</textarea>
+            <small>JSON array format. Available actions: click, fill, navigate, wait, wait_for_selector</small>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h3>Session Cookies (Optional)</h3>
+        <p class="section-hint">Cookies are automatically saved after successful claims</p>
+        
+        <div class="form-group">
+            <label for="cookies">Cookies (JSON format)</label>
+            <textarea id="cookies" name="cookies" rows="4">{{ site.cookies or '' }}</textarea>
+            <small>Leave empty to clear saved cookies</small>
+        </div>
+    </div>
+    
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"></i> Update Site
+        </button>
+        <button type="button" class="btn btn-test" data-site-id="{{ site.id }}">
+            <i class="fas fa-flask"></i> Test Configuration
+        </button>
+        <a href="{{ url_for('main.sites') }}" class="btn btn-secondary">
+            <i class="fas fa-times"></i> Cancel
+        </a>
+    </div>
+</form>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.querySelector('.btn-test').addEventListener('click', async function() {
+    const siteId = this.dataset.siteId;
+    const originalText = this.innerHTML;
+    
+    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Testing...';
+    this.disabled = true;
+    
+    try {
+        const response = await fetch(`/sites/${siteId}/test`, {
+            method: 'POST'
+        });
+        
+        const result = await response.json();
+        
+        if (result.status === 'success') {
+            this.innerHTML = '<i class="fas fa-check"></i> Test Successful!';
+            this.classList.add('success');
+            
+            // Show success message
+            const alert = document.createElement('div');
+            alert.className = 'alert alert-success';
+            alert.innerHTML = 'Test successful! The bonus claim process worked correctly.';
+            document.querySelector('.content').insertBefore(alert, document.querySelector('.site-form'));
+            
+            if (result.screenshot_path) {
+                alert.innerHTML += ` <a href="${result.screenshot_path}" target="_blank">View Screenshot</a>`;
+            }
+        } else {
+            this.innerHTML = '<i class="fas fa-times"></i> Test Failed';
+            this.classList.add('error');
+            
+            // Show error message
+            const alert = document.createElement('div');
+            alert.className = 'alert alert-error';
+            alert.innerHTML = `Test failed: ${result.message}`;
+            document.querySelector('.content').insertBefore(alert, document.querySelector('.site-form'));
+        }
+        
+        setTimeout(() => {
+            this.innerHTML = originalText;
+            this.disabled = false;
+            this.classList.remove('success', 'error');
+        }, 3000);
+    } catch (error) {
+        this.innerHTML = originalText;
+        this.disabled = false;
+        alert('Error: ' + error.message);
+    }
+});
+</script>
+{% endblock %}

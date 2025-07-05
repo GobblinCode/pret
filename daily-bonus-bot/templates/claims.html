@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Claim History - Daily Bonus Bot{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Claim History</h2>
+</div>
+
+<div class="claims-list">
+    {% for claim in claims.items %}
+    <div class="claim-card {{ claim.status }}">
+        <div class="claim-header">
+            <h3>{{ claim.site.name }}</h3>
+            <span class="claim-status {{ claim.status }}">
+                {% if claim.status == 'success' %}
+                <i class="fas fa-check-circle"></i> Success
+                {% elif claim.status == 'failed' %}
+                <i class="fas fa-times-circle"></i> Failed
+                {% else %}
+                <i class="fas fa-clock"></i> {{ claim.status|title }}
+                {% endif %}
+            </span>
+        </div>
+        
+        <div class="claim-details">
+            <p class="claim-time">
+                <i class="fas fa-calendar"></i> 
+                {{ claim.claimed_at.strftime('%B %d, %Y at %I:%M %p') }}
+            </p>
+            
+            {% if claim.message %}
+            <p class="claim-message">
+                <i class="fas fa-info-circle"></i> {{ claim.message }}
+            </p>
+            {% endif %}
+            
+            {% if claim.bonus_amount %}
+            <p class="claim-amount">
+                <i class="fas fa-coins"></i> Bonus: {{ claim.bonus_amount }}
+            </p>
+            {% endif %}
+        </div>
+        
+        {% if claim.screenshot_path %}
+        <div class="claim-actions">
+            <a href="{{ url_for('static', filename=claim.screenshot_path) }}" 
+               target="_blank" class="btn btn-sm">
+                <i class="fas fa-image"></i> View Screenshot
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+{% if claims.total == 0 %}
+<div class="empty-state">
+    <i class="fas fa-history fa-3x"></i>
+    <h3>No Claims Yet</h3>
+    <p>Claim history will appear here once you start claiming bonuses</p>
+</div>
+{% endif %}
+
+{% if claims.pages > 1 %}
+<div class="pagination">
+    {% if claims.has_prev %}
+    <a href="{{ url_for('main.claims', page=claims.prev_num) }}" class="btn btn-sm">
+        <i class="fas fa-chevron-left"></i> Previous
+    </a>
+    {% endif %}
+    
+    <span class="page-info">
+        Page {{ claims.page }} of {{ claims.pages }}
+    </span>
+    
+    {% if claims.has_next %}
+    <a href="{{ url_for('main.claims', page=claims.next_num) }}" class="btn btn-sm">
+        Next <i class="fas fa-chevron-right"></i>
+    </a>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

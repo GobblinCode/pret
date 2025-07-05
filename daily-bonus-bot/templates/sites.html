@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Sites - Daily Bonus Bot{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Gambling Sites</h2>
+    <a href="{{ url_for('main.add_site') }}" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Add Site
+    </a>
+</div>
+
+<div class="sites-grid">
+    {% for site in sites %}
+    <div class="site-detail-card">
+        <div class="site-header">
+            <h3>{{ site.name }}</h3>
+            <div class="site-status {{ 'active' if site.is_active else 'inactive' }}">
+                {{ 'Active' if site.is_active else 'Inactive' }}
+            </div>
+        </div>
+        
+        <div class="site-details">
+            <div class="detail-item">
+                <span class="label">URL:</span>
+                <span class="value">{{ site.url|truncate(40) }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">Username:</span>
+                <span class="value">{{ site.username or 'Not set' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">Created:</span>
+                <span class="value">{{ site.created_at.strftime('%Y-%m-%d') }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">Last Updated:</span>
+                <span class="value">{{ site.updated_at.strftime('%Y-%m-%d %H:%M') }}</span>
+            </div>
+        </div>
+        
+        <div class="site-actions">
+            <a href="{{ url_for('main.edit_site', site_id=site.id) }}" class="btn btn-sm">
+                <i class="fas fa-edit"></i> Edit
+            </a>
+            <form method="POST" action="{{ url_for('main.delete_site', site_id=site.id) }}" 
+                  style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this site?');">
+                <button type="submit" class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if not sites %}
+<div class="empty-state">
+    <i class="fas fa-globe fa-3x"></i>
+    <h3>No Sites Added</h3>
+    <p>Start by adding your first gambling site</p>
+    <a href="{{ url_for('main.add_site') }}" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Add Your First Site
+    </a>
+</div>
+{% endif %}
+{% endblock %}
