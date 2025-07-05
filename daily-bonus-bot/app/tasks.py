@@ -1,7 +1,10 @@
 import asyncio
 from datetime import datetime
 from .models import db, GamblingSite, ClaimLog
-from .automation import BonusClaimAutomation
+try:
+    from .automation import BonusClaimAutomation
+except ImportError:
+    from .automation_mock import BonusClaimAutomation
 
 automation = BonusClaimAutomation()
 

@@ -2,7 +2,10 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash,
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import check_password_hash
 from .models import db, User, GamblingSite, ClaimLog
-from .automation import BonusClaimAutomation
+try:
+    from .automation import BonusClaimAutomation
+except ImportError:
+    from .automation_mock import BonusClaimAutomation
 import asyncio
 import json
 from datetime import datetime, timedelta
