@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Add Site - Daily Bonus Bot{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Add New Site</h2>
+</div>
+
+<form method="POST" action="{{ url_for('main.add_site') }}" class="site-form">
+    <div class="form-section">
+        <h3>Basic Information</h3>
+        
+        <div class="form-group">
+            <label for="name">Site Name *</label>
+            <input type="text" id="name" name="name" required placeholder="e.g., BetSite Casino">
+        </div>
+        
+        <div class="form-group">
+            <label for="url">Site URL *</label>
+            <input type="url" id="url" name="url" required placeholder="https://example.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="login_url">Login URL (if different)</label>
+            <input type="url" id="login_url" name="login_url" placeholder="https://example.com/login">
+        </div>
+        
+        <div class="form-group checkbox-group">
+            <label>
+                <input type="checkbox" id="is_active" name="is_active" checked>
+                Active (Include in daily claims)
+            </label>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h3>Login Credentials</h3>
+        
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Your username">
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Your password">
+            <small>Password will be encrypted before storage</small>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h3>CSS Selectors</h3>
+        <p class="section-hint">Use browser inspector to find these selectors</p>
+        
+        <div class="form-group">
+            <label for="username_selector">Username Field Selector</label>
+            <input type="text" id="username_selector" name="username_selector" 
+                   placeholder='e.g., #username, input[name="user"]'>
+        </div>
+        
+        <div class="form-group">
+            <label for="password_selector">Password Field Selector</label>
+            <input type="text" id="password_selector" name="password_selector" 
+                   placeholder='e.g., #password, input[type="password"]'>
+        </div>
+        
+        <div class="form-group">
+            <label for="login_button_selector">Login Button Selector</label>
+            <input type="text" id="login_button_selector" name="login_button_selector" 
+                   placeholder='e.g., button[type="submit"], .login-btn'>
+        </div>
+        
+        <div class="form-group">
+            <label for="bonus_claim_selector">Bonus Claim Button Selector</label>
+            <input type="text" id="bonus_claim_selector" name="bonus_claim_selector" 
+                   placeholder='e.g., .claim-bonus, button:has-text("Claim")'>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h3>Additional Navigation Steps (Optional)</h3>
+        <p class="section-hint">JSON array of steps to navigate to bonus page</p>
+        
+        <div class="form-group">
+            <label for="additional_steps">Additional Steps</label>
+            <textarea id="additional_steps" name="additional_steps" rows="6" 
+                      placeholder='[
+  {
+    "action": "click",
+    "selector": ".promotions-menu",
+    "wait": 2
+  },
+  {
+    "action": "wait_for_selector",
+    "selector": ".daily-bonus",
+    "timeout": 10000
+  }
+]'></textarea>
+            <small>Available actions: click, fill, navigate, wait, wait_for_selector</small>
+        </div>
+    </div>
+    
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"></i> Save Site
+        </button>
+        <a href="{{ url_for('main.sites') }}" class="btn btn-secondary">
+            <i class="fas fa-times"></i> Cancel
+        </a>
+    </div>
+</form>
+
+<div class="help-section">
+    <h4>How to Find CSS Selectors:</h4>
+    <ol>
+        <li>Open the gambling site in your browser</li>
+        <li>Right-click on the element (username field, button, etc.)</li>
+        <li>Select "Inspect" or "Inspect Element"</li>
+        <li>Right-click on the highlighted HTML code</li>
+        <li>Select "Copy" → "Copy selector"</li>
+    </ol>
+</div>
+{% endblock %}
