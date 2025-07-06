@@ -1,0 +1,22 @@
+{
+  "site_name": "Zula Casino",
+  "url": "https://zulacasino.com",
+  "login_url": "https://zulacasino.com/login",
+  "username_selector": "input[type='email']",
+  "password_selector": "input[type='password']",
+  "login_button_selector": "button.btn",
+  "bonus_claim_selector": "button:contains('Claim')",
+  "additional_steps": [
+    {
+      "action": "navigate",
+      "url": "https://zulacasino.com/promotions",
+      "wait": 3
+    },
+    {
+      "action": "wait_for_selector",
+      "selector": "button:contains('Claim')",
+      "timeout": 10000
+    }
+  ],
+  "notes": "Zula Casino configuration - may need manual adjustment for bonus claim selector"
+} 

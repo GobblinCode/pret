@@ -1,0 +1,29 @@
+{
+  "site_name": "Sportzino",
+  "url": "https://sportzino.com",
+  "login_url": "https://sportzino.com/login",
+  "username_selector": "input[name='username']",
+  "password_selector": "input[type='password']",
+  "login_button_selector": null,
+  "store_url": "https://sportzino.com/store",
+  "bonus_selector": "div:has-text('Progressive Daily Bonus')",
+  "collect_button_selector": "button:has-text('Collect')",
+  "additional_steps": [
+    {
+      "action": "navigate",
+      "url": "https://sportzino.com/store",
+      "wait": 3
+    },
+    {
+      "action": "scroll",
+      "direction": "down",
+      "wait": 2
+    },
+    {
+      "action": "wait_for_selector",
+      "selector": "div:has-text('Progressive Daily Bonus')",
+      "timeout": 10000
+    }
+  ],
+  "notes": "Configuration ready for testing - may need manual adjustment for bonus selectors"
+}
