@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Unfollow Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 Facebook Unfollow Tool</h1>
+            <div class="warning">
+                <p>⚠️ <strong>Warning:</strong> This tool is for educational purposes only. Automated actions may violate Facebook's Terms of Service.</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2>Step 1: Login Information</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Facebook Username/Email:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Credentials</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Step 2: Script Execution</h2>
+                <div class="script-info">
+                    <h3>Script Purpose:</h3>
+                    <p>This script will automatically unfollow/unlike pages on Facebook by:</p>
+                    <ul>
+                        <li>Finding action buttons on the page</li>
+                        <li>Clicking on "Unlike" options in the menu</li>
+                        <li>Processing all visible items</li>
+                    </ul>
+                </div>
+                
+                <div class="form-group">
+                    <label for="facebookUrl">Facebook Page URL:</label>
+                    <input type="url" id="facebookUrl" placeholder="https://facebook.com/your-liked-pages" required>
+                </div>
+                
+                <button id="executeScript" class="btn btn-danger" disabled>Execute Unfollow Script</button>
+                <button id="showScript" class="btn btn-secondary">Show Script Code</button>
+            </div>
+
+            <div class="card">
+                <h2>Step 3: Results</h2>
+                <div id="results" class="results">
+                    <p>No actions performed yet.</p>
+                </div>
+            </div>
+        </main>
+
+        <div id="scriptModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>JavaScript Script</h2>
+                <pre id="scriptCode"></pre>
+                <button id="copyScript" class="btn btn-secondary">Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
