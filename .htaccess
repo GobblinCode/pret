@@ -1,0 +1,356 @@
+# .htaccess for GamblingReviews.com
+# Comprehensive Apache configuration for performance, security, and SEO
+
+# ===============================================
+# GENERAL SETTINGS
+# ===============================================
+
+# Enable directory browsing prevention
+Options -Indexes
+
+# Enable symbolic links (if needed)
+Options +SymLinksIfOwnerMatch
+
+# Default character set
+AddDefaultCharset UTF-8
+
+# ===============================================
+# REDIRECT TO HTTPS
+# ===============================================
+
+# Force HTTPS for all pages
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ===============================================
+# CLEAN URLS & REDIRECTS
+# ===============================================
+
+# Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Redirect .html to clean URLs
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Remove trailing slash from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+# Remove www (or add it - choose one)
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [R=301,L]
+
+# ===============================================
+# COMPRESSION
+# ===============================================
+
+# Enable compression
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE application/x-font-otf
+    AddOutputFilterByType DEFLATE application/x-font-truetype
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    
+    # Remove browser bugs (only needed for really old browsers)
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# Alternative compression method
+<IfModule mod_gzip.c>
+    mod_gzip_on Yes
+    mod_gzip_dechunk Yes
+    mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+    mod_gzip_item_include handler ^cgi-script$
+    mod_gzip_item_include mime ^text/.*
+    mod_gzip_item_include mime ^application/x-javascript.*
+    mod_gzip_item_exclude mime ^image/.*
+    mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+
+# ===============================================
+# CACHING HEADERS
+# ===============================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    
+    # Cache HTML files for 1 hour
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # Cache CSS and JS files for 1 year
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    
+    # Cache images for 1 month
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    
+    # Cache fonts for 1 year
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+    ExpiresByType application/x-font-opentype "access plus 1 year"
+    
+    # Cache XML files for 1 day
+    ExpiresByType text/xml "access plus 1 day"
+    ExpiresByType application/xml "access plus 1 day"
+    ExpiresByType application/rss+xml "access plus 1 day"
+</IfModule>
+
+# Alternative caching method
+<IfModule mod_headers.c>
+    # Cache CSS and JS files for 1 year
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    
+    # Cache images for 1 month
+    <FilesMatch "\.(png|jpg|jpeg|gif|svg|webp|ico)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+    
+    # Cache fonts for 1 year
+    <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    
+    # Don't cache HTML files
+    <FilesMatch "\.(html|htm|php)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+</IfModule>
+
+# ===============================================
+# SECURITY HEADERS
+# ===============================================
+
+<IfModule mod_headers.c>
+    # Security headers
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
+    # Content Security Policy (adjust as needed)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com"
+</IfModule>
+
+# ===============================================
+# PROTECT SENSITIVE FILES
+# ===============================================
+
+# Protect .htaccess file
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Protect admin files (basic protection)
+<Files "admin/data/*">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Protect config files
+<FilesMatch "\.(ini|log|conf|config)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect backup files
+<FilesMatch "\.(bak|backup|old|orig|save|swp|tmp)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block access to version control files
+<FilesMatch "\.(git|svn|hg|bzr)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ===============================================
+# PREVENT HOTLINKING
+# ===============================================
+
+# Prevent hotlinking of images
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?gamblingreviews\.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?google\. [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?bing\. [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yahoo\. [NC]
+RewriteRule \.(jpg|jpeg|png|gif|svg|webp)$ - [F,NC]
+
+# ===============================================
+# BLOCK BAD BOTS
+# ===============================================
+
+# Block bad bots and scrapers
+RewriteCond %{HTTP_USER_AGENT} (WebStripper|WebCopier|HTTrack|Teleport|TeleportPro|WebZip|Offline Explorer|Wget|Copier|NetAnts|SiteSnagger|WebAuto|WebReaper|SuperBot|WebSpider|SuperHTTP|GetRight|GetWeb|Go!Zilla|Go-Ahead-Got-It|GrabNet|TurnitinBot|Alexibot|CherryPicker|archiver|ia_archiver|alexa|scooter|Ask Jeeves|Slurp|ia_archiver|MMCrawler|NG-Search|NetLux|Nutch|omgilibot|psbot|seekbot|SiteSnagger|StackRambler|Teleport|TurnitinBot|VoilaBot|Wget|WebStripper|WebZip|Xenu|MJ12bot|SemrushBot|AhrefsBot|MegaIndex|BLEXBot|DotBot) [NC]
+RewriteRule .* - [F]
+
+# Block empty user agents
+RewriteCond %{HTTP_USER_AGENT} ^$
+RewriteRule .* - [F]
+
+# Block requests without proper referrer
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?gamblingreviews\.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?google\. [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?bing\. [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yahoo\. [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?duckduckgo\. [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?facebook\. [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?twitter\. [NC]
+RewriteCond %{REQUEST_URI} !^/admin/ [NC]
+RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|svg|webp)$ [NC]
+RewriteRule .* - [F]
+
+# ===============================================
+# OPTIMIZE PERFORMANCE
+# ===============================================
+
+# Enable Keep-Alive
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# Remove ETags
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# ===============================================
+# CUSTOM ERROR PAGES
+# ===============================================
+
+# Custom error pages (create these files if needed)
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+ErrorDocument 500 /500.html
+
+# ===============================================
+# WORDPRESS COMPATIBILITY (if needed)
+# ===============================================
+
+# Uncomment if you add WordPress to a subdirectory
+# RewriteRule ^wp-admin/$ wp-admin/index.php [R=301,L]
+# RewriteCond %{REQUEST_FILENAME} -f [OR]
+# RewriteCond %{REQUEST_FILENAME} -d
+# RewriteRule ^ - [L]
+# RewriteRule ^(wp-(content|admin|includes).*) $1 [L]
+# RewriteRule ^(.*\.php)$ $1 [L]
+
+# ===============================================
+# MIME TYPES
+# ===============================================
+
+# Add MIME types for better compatibility
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+    AddType text/css .css
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    AddType image/svg+xml .svg
+    AddType image/webp .webp
+    AddType application/vnd.ms-fontobject .eot
+    AddType application/x-font-ttf .ttf
+    AddType application/x-font-opentype .otf
+</IfModule>
+
+# ===============================================
+# ADDITIONAL OPTIMIZATIONS
+# ===============================================
+
+# Disable server signature
+ServerSignature Off
+
+# Limit request size (adjust as needed)
+LimitRequestBody 10485760
+
+# Set server timezone
+SetEnv TZ America/New_York
+
+# Enable mod_rewrite
+RewriteEngine On
+
+# ===============================================
+# ADMIN PANEL PROTECTION
+# ===============================================
+
+# Additional protection for admin area
+<Directory "/admin">
+    # Require valid user (uncomment and configure if needed)
+    # AuthType Basic
+    # AuthName "Admin Area"
+    # AuthUserFile /path/to/.htpasswd
+    # Require valid-user
+    
+    # Block access from specific IPs (example)
+    # Order allow,deny
+    # Allow from 192.168.1.
+    # Deny from all
+    
+    # Rate limiting (requires mod_evasive)
+    # DOSHashTableSize 4096
+    # DOSPageCount 3
+    # DOSPageInterval 1
+    # DOSBlockingPeriod 600
+</Directory>
+
+# ===============================================
+# FINAL RULES
+# ===============================================
+
+# Redirect old URLs to new ones (add as needed)
+# Redirect 301 /old-page.html /new-page
+# Redirect 301 /casino-reviews /reviews
+
+# Handle trailing slashes consistently
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+# This should be the last rule
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]

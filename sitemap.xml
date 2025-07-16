@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://gamblingreviews.com/</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Main Category Pages -->
+    <url>
+        <loc>https://gamblingreviews.com/casinos</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/sportsbooks</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/reviews</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/blog</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Casino Subcategories -->
+    <url>
+        <loc>https://gamblingreviews.com/casinos/slots</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/casinos/blackjack</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/casinos/roulette</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/casinos/live-dealer</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/casinos/bonuses</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Sportsbook Subcategories -->
+    <url>
+        <loc>https://gamblingreviews.com/sportsbooks/football</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/sportsbooks/basketball</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/sportsbooks/baseball</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/sportsbooks/esports</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/sportsbooks/bonuses</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Review Pages -->
+    <url>
+        <loc>https://gamblingreviews.com/reviews/bovada-casino-review</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/reviews/ignition-casino-review</loc>
+        <lastmod>2025-01-12T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/reviews/betus-sportsbook-review</loc>
+        <lastmod>2025-01-10T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/reviews/cafe-casino-review</loc>
+        <lastmod>2025-01-08T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/reviews/ignition-poker-review</loc>
+        <lastmod>2025-01-05T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Guide Pages -->
+    <url>
+        <loc>https://gamblingreviews.com/guides/how-to-choose-online-casino</loc>
+        <lastmod>2025-01-14T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/guides/sports-betting-guide</loc>
+        <lastmod>2025-01-13T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/guides/online-poker-strategy</loc>
+        <lastmod>2025-01-11T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/guides/casino-bonuses-explained</loc>
+        <lastmod>2025-01-09T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/guides/responsible-gambling</loc>
+        <lastmod>2025-01-07T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Blog Posts -->
+    <url>
+        <loc>https://gamblingreviews.com/blog/best-gambling-sites-2025</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/blog/online-casino-trends-2025</loc>
+        <lastmod>2025-01-14T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/blog/sports-betting-tips</loc>
+        <lastmod>2025-01-13T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/blog/cryptocurrency-gambling</loc>
+        <lastmod>2025-01-12T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Static Pages -->
+    <url>
+        <loc>https://gamblingreviews.com/about</loc>
+        <lastmod>2025-01-01T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/contact</loc>
+        <lastmod>2025-01-01T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/privacy</loc>
+        <lastmod>2025-01-01T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/terms</loc>
+        <lastmod>2025-01-01T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/responsible-gambling</loc>
+        <lastmod>2025-01-01T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Location-based Pages -->
+    <url>
+        <loc>https://gamblingreviews.com/us</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/canada</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/uk</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/australia</loc>
+        <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Comparison Pages -->
+    <url>
+        <loc>https://gamblingreviews.com/comparisons/bovada-vs-ignition</loc>
+        <lastmod>2025-01-14T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/comparisons/best-casino-bonuses</loc>
+        <lastmod>2025-01-13T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://gamblingreviews.com/comparisons/fastest-payout-casinos</loc>
+        <lastmod>2025-01-12T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>
