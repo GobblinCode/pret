@@ -1,2 +1,4 @@
 2025-08-02 13:25:40,800 - INFO - Generated 9 valid examples out of 9 total
 2025-08-02 13:25:40,800 - INFO - Saved 9 examples to training_data/test_data.json
+2025-08-03 11:57:36,498 - INFO - Generated 3 valid examples out of 3 total
+2025-08-03 11:57:36,499 - INFO - Saved 3 examples to training_data/my_first_batch.json
