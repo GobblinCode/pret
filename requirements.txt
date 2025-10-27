@@ -1,0 +1,12 @@
+# Core dependencies for LLM Training Data Generator
+# No external dependencies required - uses only Python standard library
+
+# Optional dependencies for enhanced functionality:
+# schedule>=1.2.0  # For advanced scheduling (if needed)
+# requests>=2.28.0  # For web scraping additional data (if needed)
+# beautifulsoup4>=4.11.0  # For parsing web content (if needed)
+# pandas>=1.5.0  # For data analysis (if needed)
+# numpy>=1.23.0  # For numerical operations (if needed)
+
+# The script is designed to work with Python 3.7+ standard library only
+# This ensures maximum compatibility and minimal setup requirements

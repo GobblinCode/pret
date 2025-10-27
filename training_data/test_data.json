@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-02T13:25:40.800236",
+    "total_examples": 9,
+    "generator_version": "1.0.0"
+  },
+  "examples": [
+    {
+      "id": "3e2e4e3843e7",
+      "type": "comprehensive_review",
+      "input_text": "Write a comprehensive review of DraftKings gambling site",
+      "output_text": "# DraftKings Review - 95/100\n\n## Overview\nDraftKings is a premium online gambling platform offering Sports Betting, Daily Fantasy, Casino. With a current rating of 95/100, it stands out for its exceptional service.\n\n## Welcome Bonus\nNew players can claim $1,000 No Sweat First Bet - one of the competitive offers in the industry.\n\n## Key Features\n• Sports Betting\n• Daily Fantasy\n• Casino\n• Live Betting\n\n## Pros\n✓ Legal in many states\n✓ Excellent odds\n✓ Great promotions\n\n## Cons  \n✗ Geographic restrictions\n✗ Account verification required\n\n## Final Verdict\nDraftKings exceeds expectations with its outstanding platform. The $1,000 No Sweat First Bet welcome bonus and sports betting options make it a top choice for both new and experienced players.\n\n**Rating: 95/100**",
+      "metadata": {
+        "site": "draftkings",
+        "rating": 95,
+        "word_count": 125
+      },
+      "quality_score": 1.0,
+      "created_at": "2025-08-02T13:25:40.799248"
+    },
+    {
+      "id": "9d477b658cf8",
+      "type": "comprehensive_review",
+      "input_text": "Write a comprehensive review of Bovada gambling site",
+      "output_text": "# Bovada Review - 92/100\n\n## Overview\nBovada is a premium online gambling platform offering Sports Betting, Casino Games, Poker. With a current rating of 92/100, it stands out for its exceptional service.\n\n## Welcome Bonus\nNew players can claim 100% up to $1,000 - one of the most generous offers in the industry.\n\n## Key Features\n• Sports Betting\n• Casino Games\n• Poker\n• Live Dealer\n\n## Pros\n✓ Excellent mobile app\n✓ Fast payouts\n✓ Great customer service\n\n## Cons  \n✗ Limited banking options\n✗ No phone support\n\n## Final Verdict\nBovada exceeds expectations with its outstanding platform. The 100% up to $1,000 welcome bonus and sports betting options make it a top choice for both new and experienced players.\n\n**Rating: 92/100**",
+      "metadata": {
+        "site": "bovada",
+        "rating": 92,
+        "word_count": 125
+      },
+      "quality_score": 1.0,
+      "created_at": "2025-08-02T13:25:40.799337"
+    },
+    {
+      "id": "11419335a2ee",
+      "type": "comprehensive_review",
+      "input_text": "Write a comprehensive review of FanDuel gambling site",
+      "output_text": "# FanDuel Review - 93/100\n\n## Overview\nFanDuel is a premium online gambling platform offering Sports Betting, Casino, Racing. With a current rating of 93/100, it stands out for its exceptional service.\n\n## Welcome Bonus\nNew players can claim Bet $5, Get $150 in Bonus Bets - one of the competitive offers in the industry.\n\n## Key Features\n• Sports Betting\n• Casino\n• Racing\n• Daily Fantasy\n\n## Pros\n✓ User-friendly interface\n✓ Fast deposits\n✓ Live streaming\n\n## Cons  \n✗ Limited international access\n✗ Lower betting limits\n\n## Final Verdict\nFanDuel exceeds expectations with its outstanding platform. The Bet $5, Get $150 in Bonus Bets welcome bonus and sports betting options make it a top choice for both new and experienced players.\n\n**Rating: 93/100**",
+      "metadata": {
+        "site": "fanduel",
+        "rating": 93,
+        "word_count": 126
+      },
+      "quality_score": 1.0,
+      "created_at": "2025-08-02T13:25:40.799378"
+    },
+    {
+      "id": "437c831935f2",
+      "type": "qa_pair",
+      "input_text": "Are there withdrawal fees?",
+      "output_text": "Most withdrawals are free, but some methods may have small processing fees. Check the banking section for specific fees.",
+      "metadata": {
+        "category": "banking_payments",
+        "word_count": 19
+      },
+      "quality_score": 0.9,
+      "created_at": "2025-08-02T13:25:40.799392"
+    },
+    {
+      "id": "2c4d41880d62",
+      "type": "qa_pair",
+      "input_text": "What documents do I need for verification?",
+      "output_text": "You'll need a government-issued ID (driver's license or passport) and a recent utility bill or bank statement for address verification.",
+      "metadata": {
+        "category": "account_setup",
+        "word_count": 20
+      },
+      "quality_score": 0.9500000000000001,
+      "created_at": "2025-08-02T13:25:40.799402"
+    },
+    {
+      "id": "72ee8276024a",
+      "type": "seo_article",
+      "input_text": "Write an SEO article about best gambling sites",
+      "output_text": "# Best Online Gambling Sites 2024 - Top Rated Casinos\n\n## Introduction\nFinding the best gambling sites can be challenging with so many options available. Our expert team has reviewed hundreds of platforms to bring you this comprehensive guide.\n\n## Key Factors We Consider\n- **Security & Licensing**: All recommended sites are fully licensed\n- **Game Selection**: Variety and quality of available games  \n- **Bonuses & Promotions**: Value and fairness of offers\n- **Payment Options**: Speed and reliability of transactions\n- **Customer Support**: Availability and helpfulness\n\n## Top Recommendations\n\n### 1. Bovada - 92/100\n- **Bonus**: 100% up to $1,000\n- **Best For**: Sports betting and casino games\n- **Highlights**: Fast payouts, mobile-friendly\n\n### 2. DraftKings - 95/100  \n- **Bonus**: $1,000 No Sweat First Bet\n- **Best For**: Legal sports betting\n- **Highlights**: Excellent odds, great app\n\n### 3. Ignition Casino - 88/100\n- **Bonus**: 150% up to $1,500\n- **Best For**: Anonymous play\n- **Highlights**: Crypto-friendly, tournaments\n\n## How to Get Started\n1. Choose a licensed site from our recommendations\n2. Create your account with valid information\n3. Make your first deposit to claim bonuses\n4. Start playing responsibly\n\n## Conclusion\nThe best gambling sites offer secure, entertaining experiences with generous bonuses. Always gamble responsibly and within your means.\n\n*Last updated: August 2025*",
+      "metadata": {
+        "topic": "best_gambling_sites",
+        "keywords": [
+          "best gambling sites",
+          "online casinos",
+          "top rated"
+        ],
+        "word_count": 214,
+        "seo_optimized": true
+      },
+      "quality_score": 1.0,
+      "created_at": "2025-08-02T13:25:40.799455"
+    },
+    {
+      "id": "d92c945dc100",
+      "type": "seo_article",
+      "input_text": "Write an SEO article about gambling bonuses",
+      "output_text": "# Best Casino Bonuses 2024 - Welcome Offers & Free Spins\n\n## Introduction\nFinding the casino bonuses can be challenging with so many options available. Our expert team has reviewed hundreds of platforms to bring you this comprehensive guide.\n\n## Key Factors We Consider\n- **Security & Licensing**: All recommended sites are fully licensed\n- **Game Selection**: Variety and quality of available games  \n- **Bonuses & Promotions**: Value and fairness of offers\n- **Payment Options**: Speed and reliability of transactions\n- **Customer Support**: Availability and helpfulness\n\n## Top Recommendations\n\n### 1. Bovada - 92/100\n- **Bonus**: 100% up to $1,000\n- **Best For**: Sports betting and casino games\n- **Highlights**: Fast payouts, mobile-friendly\n\n### 2. DraftKings - 95/100  \n- **Bonus**: $1,000 No Sweat First Bet\n- **Best For**: Legal sports betting\n- **Highlights**: Excellent odds, great app\n\n### 3. Ignition Casino - 88/100\n- **Bonus**: 150% up to $1,500\n- **Best For**: Anonymous play\n- **Highlights**: Crypto-friendly, tournaments\n\n## How to Get Started\n1. Choose a licensed site from our recommendations\n2. Create your account with valid information\n3. Make your first deposit to claim bonuses\n4. Start playing responsibly\n\n## Conclusion\nThe casino bonuses offer secure, entertaining experiences with generous bonuses. Always gamble responsibly and within your means.\n\n*Last updated: August 2025*",
+      "metadata": {
+        "topic": "gambling_bonuses",
+        "keywords": [
+          "casino bonuses",
+          "welcome bonus",
+          "free spins"
+        ],
+        "word_count": 213,
+        "seo_optimized": true
+      },
+      "quality_score": 1.0,
+      "created_at": "2025-08-02T13:25:40.799481"
+    },
+    {
+      "id": "a7250b9c5e9a",
+      "type": "comparison_review",
+      "input_text": "Compare DraftKings vs Bovada gambling sites",
+      "output_text": "# DraftKings vs Bovada - Head-to-Head Comparison\n\n## Quick Comparison\n| Feature | DraftKings | Bovada |\n|---------|----------|----------|\n| Rating | 95/100 | 92/100 |\n| Bonus | $1,000 No Sweat First Bet | 100% up to $1,000 |\n| Key Features | 4 features | 4 features |\n\n## Detailed Analysis\n\n### Welcome Bonuses\n- **DraftKings**: $1,000 No Sweat First Bet\n- **Bovada**: 100% up to $1,000\n\n### Game Selection\n- **DraftKings**: Sports Betting, Daily Fantasy, Casino, Live Betting\n- **Bovada**: Sports Betting, Casino Games, Poker, Live Dealer\n\n### Strengths & Weaknesses\n\n**DraftKings Pros:**\n• Legal in many states\n• Excellent odds\n• Great promotions\n\n**DraftKings Cons:**\n• Geographic restrictions\n• Account verification required\n\n**Bovada Pros:**\n• Excellent mobile app\n• Fast payouts\n• Great customer service\n\n**Bovada Cons:**\n• Limited banking options\n• No phone support\n\n## The Verdict\nDraftKings takes the lead with a 95/100 rating. It excels in legal in many states and offers $1,000 No Sweat First Bet.\n\n**Winner: DraftKings** 🏆",
+      "metadata": {
+        "sites": [
+          "draftkings",
+          "bovada"
+        ],
+        "winner": "draftkings",
+        "word_count": 166
+      },
+      "quality_score": 1.0,
+      "created_at": "2025-08-02T13:25:40.799581"
+    },
+    {
+      "id": "e6747962c6d9",
+      "type": "customer_support",
+      "input_text": "Handle a customer support conversation about bonus question",
+      "output_text": "User: I just signed up and made my first deposit. Where is my welcome bonus?\n\nSupport: Welcome to our casino! I can help you with your bonus. Can you tell me how much you deposited and if you used a bonus code?\n\nUser: I deposited $200 and used the code WELCOME100.\n\nSupport: Perfect! I can see your deposit and the WELCOME100 code was applied correctly. Your 100% bonus of $200 has been added to your bonus balance. You can see it in your account under 'Bonus Funds'.\n\nUser: Great, thank you! When can I withdraw the bonus?\n\nSupport: The bonus has a 30x wagering requirement, which means you need to wager $6,000 ($200 × 30) before you can withdraw it. You can track your progress in the 'My Bonuses' section of your account.",
+      "metadata": {
+        "scenario": "bonus_question",
+        "message_count": 6,
+        "conversation_type": "support"
+      },
+      "quality_score": 0.9400000000000001,
+      "created_at": "2025-08-02T13:25:40.799619"
+    }
+  ]
+}

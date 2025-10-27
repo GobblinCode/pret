@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-03T11:57:36.499064",
+    "total_examples": 3,
+    "generator_version": "1.0.0"
+  },
+  "examples": [
+    {
+      "id": "9d477b658cf8",
+      "type": "comprehensive_review",
+      "input_text": "Write a comprehensive review of Bovada gambling site",
+      "output_text": "# Bovada Review - 92/100\n\n## Overview\nBovada is a premium online gambling platform offering Sports Betting, Casino Games, Poker. With a current rating of 92/100, it stands out for its exceptional service.\n\n## Welcome Bonus\nNew players can claim 100% up to $1,000 - one of the most generous offers in the industry.\n\n## Key Features\n• Sports Betting\n• Casino Games\n• Poker\n• Live Dealer\n\n## Pros\n✓ Excellent mobile app\n✓ Fast payouts\n✓ Great customer service\n\n## Cons  \n✗ Limited banking options\n✗ No phone support\n\n## Final Verdict\nBovada exceeds expectations with its outstanding platform. The 100% up to $1,000 welcome bonus and sports betting options make it a top choice for both new and experienced players.\n\n**Rating: 92/100**",
+      "metadata": {
+        "site": "bovada",
+        "rating": 92,
+        "word_count": 125
+      },
+      "quality_score": 1.0,
+      "created_at": "2025-08-03T11:57:36.498527"
+    },
+    {
+      "id": "589891c21fb9",
+      "type": "qa_pair",
+      "input_text": "How long do withdrawals take?",
+      "output_text": "E-wallet withdrawals: 24-48 hours, Bank transfers: 3-5 business days, Crypto: 1-24 hours.",
+      "metadata": {
+        "category": "banking_payments",
+        "word_count": 12
+      },
+      "quality_score": 0.8500000000000001,
+      "created_at": "2025-08-03T11:57:36.498594"
+    },
+    {
+      "id": "72ee8276024a",
+      "type": "seo_article",
+      "input_text": "Write an SEO article about best gambling sites",
+      "output_text": "# Best Online Gambling Sites 2024 - Top Rated Casinos\n\n## Introduction\nFinding the best gambling sites can be challenging with so many options available. Our expert team has reviewed hundreds of platforms to bring you this comprehensive guide.\n\n## Key Factors We Consider\n- **Security & Licensing**: All recommended sites are fully licensed\n- **Game Selection**: Variety and quality of available games  \n- **Bonuses & Promotions**: Value and fairness of offers\n- **Payment Options**: Speed and reliability of transactions\n- **Customer Support**: Availability and helpfulness\n\n## Top Recommendations\n\n### 1. Bovada - 92/100\n- **Bonus**: 100% up to $1,000\n- **Best For**: Sports betting and casino games\n- **Highlights**: Fast payouts, mobile-friendly\n\n### 2. DraftKings - 95/100  \n- **Bonus**: $1,000 No Sweat First Bet\n- **Best For**: Legal sports betting\n- **Highlights**: Excellent odds, great app\n\n### 3. Ignition Casino - 88/100\n- **Bonus**: 150% up to $1,500\n- **Best For**: Anonymous play\n- **Highlights**: Crypto-friendly, tournaments\n\n## How to Get Started\n1. Choose a licensed site from our recommendations\n2. Create your account with valid information\n3. Make your first deposit to claim bonuses\n4. Start playing responsibly\n\n## Conclusion\nThe best gambling sites offer secure, entertaining experiences with generous bonuses. Always gamble responsibly and within your means.\n\n*Last updated: August 2025*",
+      "metadata": {
+        "topic": "best_gambling_sites",
+        "keywords": [
+          "best gambling sites",
+          "online casinos",
+          "top rated"
+        ],
+        "word_count": 214,
+        "seo_optimized": true
+      },
+      "quality_score": 1.0,
+      "created_at": "2025-08-03T11:57:36.498659"
+    }
+  ]
+}

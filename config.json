@@ -1,0 +1,225 @@
+{
+  "generation_settings": {
+    "default_batch_size": 100,
+    "output_directory": "training_data",
+    "continuous_interval_seconds": 3600,
+    "quality_threshold": 0.6,
+    "max_examples_per_file": 1000
+  },
+  "content_distribution": {
+    "reviews": 0.3,
+    "qa_pairs": 0.25,
+    "seo_content": 0.2,
+    "comparisons": 0.15,
+    "interactions": 0.1
+  },
+  "gambling_sites": {
+    "bovada": {
+      "name": "Bovada",
+      "bonus": "100% up to $1,000",
+      "features": ["Sports Betting", "Casino Games", "Poker", "Live Dealer"],
+      "pros": ["Excellent mobile app", "Fast payouts", "Great customer service"],
+      "cons": ["Limited banking options", "No phone support"],
+      "rating": 92,
+      "active": true
+    },
+    "ignition": {
+      "name": "Ignition Casino",
+      "bonus": "150% up to $1,500",
+      "features": ["Slots", "Table Games", "Live Dealer", "Tournaments"],
+      "pros": ["Anonymous play", "Crypto-friendly", "High-quality games"],
+      "cons": ["Limited customer support hours", "Withdrawal fees"],
+      "rating": 88,
+      "active": true
+    },
+    "draftkings": {
+      "name": "DraftKings",
+      "bonus": "$1,000 No Sweat First Bet",
+      "features": ["Sports Betting", "Daily Fantasy", "Casino", "Live Betting"],
+      "pros": ["Legal in many states", "Excellent odds", "Great promotions"],
+      "cons": ["Geographic restrictions", "Account verification required"],
+      "rating": 95,
+      "active": true
+    },
+    "fanduel": {
+      "name": "FanDuel",
+      "bonus": "Bet $5, Get $150 in Bonus Bets",
+      "features": ["Sports Betting", "Casino", "Racing", "Daily Fantasy"],
+      "pros": ["User-friendly interface", "Fast deposits", "Live streaming"],
+      "cons": ["Limited international access", "Lower betting limits"],
+      "rating": 93,
+      "active": true
+    },
+    "betmgm": {
+      "name": "BetMGM",
+      "bonus": "$1,000 Risk-Free First Bet",
+      "features": ["Sports Betting", "Casino", "Poker", "Live Dealer"],
+      "pros": ["Wide game selection", "Excellent customer support", "Fast withdrawals"],
+      "cons": ["High wagering requirements", "Limited crypto options"],
+      "rating": 89,
+      "active": true
+    },
+    "caesars": {
+      "name": "Caesars Sportsbook",
+      "bonus": "$1,250 First Bet on Caesars",
+      "features": ["Sports Betting", "Casino", "Live Betting", "Promotions"],
+      "pros": ["Great loyalty program", "Competitive odds", "Live streaming"],
+      "cons": ["Complex bonus terms", "Slower customer support"],
+      "rating": 87,
+      "active": true
+    }
+  },
+  "qa_categories": {
+    "account_setup": {
+      "weight": 0.2,
+      "templates": [
+        {
+          "question": "How do I create an account?",
+          "answer": "To create an account, click 'Sign Up', provide your email, create a password, and verify your identity with required documents."
+        },
+        {
+          "question": "What documents do I need for verification?",
+          "answer": "You'll need a government-issued ID (driver's license or passport) and a recent utility bill or bank statement for address verification."
+        },
+        {
+          "question": "How long does account verification take?",
+          "answer": "Account verification typically takes 24-48 hours. You'll receive an email confirmation once approved."
+        }
+      ]
+    },
+    "bonuses_promotions": {
+      "weight": 0.25,
+      "templates": [
+        {
+          "question": "How do I claim my welcome bonus?",
+          "answer": "Make your first deposit and the bonus will be automatically credited to your account. Some bonuses require a promo code during deposit."
+        },
+        {
+          "question": "What are the wagering requirements?",
+          "answer": "Most bonuses have 25x-40x wagering requirements. This means you must bet the bonus amount 25-40 times before withdrawing."
+        },
+        {
+          "question": "Can I withdraw my bonus immediately?",
+          "answer": "No, bonuses must meet wagering requirements first. Only the winnings from bonus play can be withdrawn after meeting requirements."
+        }
+      ]
+    },
+    "banking_payments": {
+      "weight": 0.2,
+      "templates": [
+        {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept credit/debit cards, bank transfers, e-wallets (PayPal, Skrill), and cryptocurrencies (Bitcoin, Ethereum)."
+        },
+        {
+          "question": "How long do withdrawals take?",
+          "answer": "E-wallet withdrawals: 24-48 hours, Bank transfers: 3-5 business days, Crypto: 1-24 hours."
+        },
+        {
+          "question": "Are there withdrawal fees?",
+          "answer": "Most withdrawals are free, but some methods may have small processing fees. Check the banking section for specific fees."
+        }
+      ]
+    },
+    "game_rules": {
+      "weight": 0.15,
+      "templates": [
+        {
+          "question": "How do I play blackjack?",
+          "answer": "In blackjack, try to get cards totaling 21 or as close as possible without going over. Face cards are worth 10, Aces are 1 or 11."
+        },
+        {
+          "question": "What are the odds in roulette?",
+          "answer": "European roulette has a 2.7% house edge, while American roulette has a 5.26% house edge due to the double zero."
+        }
+      ]
+    },
+    "technical_support": {
+      "weight": 0.1,
+      "templates": [
+        {
+          "question": "The website won't load properly. What should I do?",
+          "answer": "Clear your browser cache and cookies, try a different browser, or check your internet connection. Contact support if issues persist."
+        },
+        {
+          "question": "I can't log into my account. Help!",
+          "answer": "Try resetting your password using the 'Forgot Password' link. If that doesn't work, contact customer support with your account details."
+        }
+      ]
+    },
+    "responsible_gambling": {
+      "weight": 0.1,
+      "templates": [
+        {
+          "question": "How can I set deposit limits?",
+          "answer": "Go to 'Account Settings' > 'Responsible Gambling' to set daily, weekly, or monthly deposit limits. These take effect immediately."
+        },
+        {
+          "question": "What if I think I have a gambling problem?",
+          "answer": "We provide self-exclusion tools and links to gambling addiction resources. Contact our support team for assistance with responsible gambling tools."
+        }
+      ]
+    }
+  },
+  "seo_topics": {
+    "best_gambling_sites": {
+      "title": "Best Online Gambling Sites 2024 - Top Rated Casinos",
+      "keywords": ["best gambling sites", "online casinos", "top rated"],
+      "content_outline": ["Introduction", "Top 5 Sites", "How We Rate", "Conclusion"],
+      "weight": 0.3
+    },
+    "gambling_bonuses": {
+      "title": "Best Casino Bonuses 2024 - Welcome Offers & Free Spins",
+      "keywords": ["casino bonuses", "welcome bonus", "free spins"],
+      "content_outline": ["Types of Bonuses", "Best Current Offers", "Terms to Know", "How to Claim"],
+      "weight": 0.25
+    },
+    "sports_betting_guide": {
+      "title": "Sports Betting Guide 2024 - How to Bet on Sports Online",
+      "keywords": ["sports betting", "betting guide", "how to bet"],
+      "content_outline": ["Getting Started", "Types of Bets", "Best Sportsbooks", "Tips & Strategy"],
+      "weight": 0.2
+    },
+    "casino_games_guide": {
+      "title": "Online Casino Games Guide - Slots, Blackjack, Roulette & More",
+      "keywords": ["casino games", "online slots", "table games"],
+      "content_outline": ["Popular Games", "Game Rules", "Strategy Tips", "Where to Play"],
+      "weight": 0.15
+    },
+    "mobile_gambling": {
+      "title": "Mobile Gambling Apps 2024 - Best Casino & Betting Apps",
+      "keywords": ["mobile gambling", "casino apps", "betting apps"],
+      "content_outline": ["Top Mobile Apps", "Features to Look For", "Download Guide", "Mobile Bonuses"],
+      "weight": 0.1
+    }
+  },
+  "quality_filters": {
+    "min_input_length": 10,
+    "min_output_length": 20,
+    "max_output_length": 5000,
+    "harmful_patterns": [
+      "\\b(hack|cheat|exploit)\\b",
+      "\\bguaranteed\\s+win\\b",
+      "\\brisk\\s+free\\b",
+      "\\b100%\\s+win\\s+rate\\b"
+    ],
+    "required_keywords": [
+      "casino", "betting", "bonus", "odds", "payout", "review", 
+      "gambling", "wager", "deposit", "withdrawal"
+    ]
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "data_generation.log",
+    "max_file_size_mb": 50,
+    "backup_count": 5
+  },
+  "automation": {
+    "enable_continuous_mode": true,
+    "default_interval_minutes": 60,
+    "max_daily_batches": 24,
+    "enable_quality_monitoring": true,
+    "auto_cleanup_old_files": true,
+    "keep_files_days": 30
+  }
+}
